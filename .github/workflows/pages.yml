@@ -1,0 +1,45 @@
+name: 更新資料並發布網站
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "20 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 更新官方除權息資料
+        run: python update_dividends.py
+      - name: 保存最新資料與每日快照
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data logs/update.log
+          git diff --cached --quiet || git commit -m "data: update official dividend calendar [skip ci]"
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: 發布 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

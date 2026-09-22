@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="整理 TWSE 與 TPEx 官方已公告除權息資訊的台股股息月曆">
+  <title>台股股息月曆</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">息</span>
+      <div><h1>台股股息月曆</h1><p>官方公告，一頁掌握</p></div>
+    </div>
+    <div class="data-state">
+      <span id="updateTime">資料載入中…</span>
+      <span>資料來源：TWSE / TPEx</span>
+      <button id="reloadBtn" class="text-button" type="button">重新載入資料</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="control-panel" aria-label="月曆篩選">
+      <div class="segmented" role="group" aria-label="證券類型">
+        <button class="active" data-filter="ALL" type="button">全部</button>
+        <button data-filter="ETF" type="button">ETF</button>
+        <button data-filter="REIT" type="button">REIT</button>
+        <button data-filter="ETN" type="button">ETN</button>
+        <button data-filter="STOCK" type="button">個股</button>
+      </div>
+      <label class="search"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="搜尋股票代號或名稱" autocomplete="off"></label>
+      <div class="month-nav">
+        <button id="prevMonth" type="button" aria-label="上個月">‹</button>
+        <button id="todayBtn" type="button">今天</button>
+        <button id="nextMonth" type="button" aria-label="下個月">›</button>
+      </div>
+    </section>
+
+    <section class="calendar-card">
+      <div class="calendar-heading">
+        <div><h2 id="monthTitle"></h2><p id="monthSummary"></p></div>
+        <div class="legend"><span><i class="dot etf"></i>基金商品</span><span><i class="dot stock"></i>個股</span><span><i class="dot pending"></i>待公告</span></div>
+      </div>
+      <div class="weekday" aria-hidden="true"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+      <div id="calendar" class="calendar-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="upcoming-card">
+      <div class="section-heading"><div><p class="eyebrow">UP NEXT</p><h2>即將除息</h2></div>
+        <div class="segmented small" role="group" aria-label="即將除息範圍"><button class="active" data-range="7" type="button">未來 7 天</button><button data-range="30" type="button">未來 30 天</button></div>
+      </div>
+      <div id="upcomingList" class="upcoming-list"></div>
+    </section>
+  </main>
+
+  <dialog id="detailDialog">
+    <button id="closeDialog" class="dialog-close" type="button" aria-label="關閉">×</button>
+    <div id="detailContent"></div>
+  </dialog>
+  <dialog id="dayDialog">
+    <button id="closeDayDialog" class="dialog-close" type="button" aria-label="關閉">×</button>
+    <div id="dayContent"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
