@@ -24,6 +24,7 @@ TZ = timezone(timedelta(hours=8), name="Asia/Taipei")
 SOURCES = {
     "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL",
     "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost",
+    "TWSE_ETF_HISTORY": "https://www.twse.com.tw/rwd/zh/ETF/etfDiv",
 }
 
 
@@ -126,6 +127,41 @@ def normalize_tpex(row: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def fetch_twse_etf_history(end_year: int) -> list[list[Any]]:
+    url = f"{SOURCES['TWSE_ETF_HISTORY']}?startDate=2005&endDate={end_year}&response=json"
+    request = urllib.request.Request(
+        url,
+        headers={"User-Agent": "DividendCalendar/1.0", "Accept": "application/json"},
+    )
+    with urllib.request.urlopen(request, timeout=60) as response:
+        payload = json.loads(response.read().decode("utf-8-sig"))
+    rows = payload.get("data")
+    if not isinstance(rows, list):
+        raise ValueError("TWSE ETF 歷史收益分配 API 回傳格式異常")
+    return rows
+
+
+def normalize_twse_etf_history(row: list[Any]) -> dict[str, Any]:
+    if len(row) < 8:
+        raise ValueError("TWSE ETF 歷史收益分配欄位不足")
+    cash = number_or_none(row[5])
+    return {
+        "symbol": str(row[0] or "").strip(),
+        "name": str(row[1] or "").strip(),
+        "market": "TWSE",
+        "type": "ETF",
+        "exDividendDate": roc_date_to_iso(row[2]),
+        "cashDividend": cash,
+        "stockDividendRatio": None,
+        "eventType": "ex-dividend",
+        "status": "pending" if cash is None else "announced",
+        "source": "TWSE",
+        "recordDate": roc_date_to_iso(row[3]) if row[3] else None,
+        "paymentDate": roc_date_to_iso(row[4]) if row[4] else None,
+        "announcementYear": int(row[7]) + 1911 if int(row[7]) < 1911 else int(row[7]),
+    }
+
+
 def open_database() -> sqlite3.Connection:
     connection = sqlite3.connect(DATABASE_FILE)
     connection.row_factory = sqlite3.Row
@@ -145,6 +181,9 @@ def open_database() -> sqlite3.Connection:
             first_seen_at TEXT NOT NULL,
             last_seen_at TEXT NOT NULL,
             is_in_latest_feed INTEGER NOT NULL DEFAULT 1,
+            record_date TEXT,
+            payment_date TEXT,
+            announcement_year INTEGER,
             PRIMARY KEY (source, symbol, ex_dividend_date, event_type)
         );
         CREATE INDEX IF NOT EXISTS idx_dividend_events_date
@@ -163,6 +202,16 @@ def open_database() -> sqlite3.Connection:
         );
         """
     )
+    existing_columns = {
+        row[1] for row in connection.execute("PRAGMA table_info(dividend_events)").fetchall()
+    }
+    for column, definition in (
+        ("record_date", "TEXT"),
+        ("payment_date", "TEXT"),
+        ("announcement_year", "INTEGER"),
+    ):
+        if column not in existing_columns:
+            connection.execute(f"ALTER TABLE dividend_events ADD COLUMN {column} {definition}")
     return connection
 
 
@@ -172,8 +221,9 @@ def store_items(connection: sqlite3.Connection, items: list[dict[str, Any]], see
         INSERT INTO dividend_events (
             source, symbol, ex_dividend_date, event_type, name, market,
             security_type, cash_dividend, stock_dividend_ratio, status,
-            first_seen_at, last_seen_at, is_in_latest_feed
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)
+            first_seen_at, last_seen_at, is_in_latest_feed,
+            record_date, payment_date, announcement_year
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, ?)
         ON CONFLICT(source, symbol, ex_dividend_date, event_type) DO UPDATE SET
             name = excluded.name,
             market = excluded.market,
@@ -185,7 +235,10 @@ def store_items(connection: sqlite3.Connection, items: list[dict[str, Any]], see
                 ELSE 'pending'
             END,
             last_seen_at = excluded.last_seen_at,
-            is_in_latest_feed = 1
+            is_in_latest_feed = 1,
+            record_date = COALESCE(excluded.record_date, dividend_events.record_date),
+            payment_date = COALESCE(excluded.payment_date, dividend_events.payment_date),
+            announcement_year = COALESCE(excluded.announcement_year, dividend_events.announcement_year)
     """
     for item in items:
         connection.execute(
@@ -194,6 +247,7 @@ def store_items(connection: sqlite3.Connection, items: list[dict[str, Any]], see
                 item["source"], item["symbol"], item["exDividendDate"], item["eventType"],
                 item["name"], item["market"], item["type"], item["cashDividend"],
                 item["stockDividendRatio"], item["status"], seen_at, seen_at,
+                item.get("recordDate"), item.get("paymentDate"), item.get("announcementYear"),
             ),
         )
 
@@ -203,7 +257,8 @@ def export_database_items(connection: sqlite3.Connection) -> list[dict[str, Any]
         """
         SELECT source, symbol, name, market, security_type, ex_dividend_date,
                cash_dividend, stock_dividend_ratio, event_type, status,
-               first_seen_at, last_seen_at, is_in_latest_feed
+               first_seen_at, last_seen_at, is_in_latest_feed,
+               record_date, payment_date, announcement_year
         FROM dividend_events
         ORDER BY ex_dividend_date, symbol
         """
@@ -223,6 +278,9 @@ def export_database_items(connection: sqlite3.Connection) -> list[dict[str, Any]
             "firstSeenAt": row["first_seen_at"],
             "lastSeenAt": row["last_seen_at"],
             "isInLatestFeed": bool(row["is_in_latest_feed"]),
+            "recordDate": row["record_date"],
+            "paymentDate": row["payment_date"],
+            "announcementYear": row["announcement_year"],
         }
         for row in rows
     ]
@@ -235,6 +293,7 @@ def main() -> int:
 
     twse_raw = fetch_json(SOURCES["TWSE"])
     tpex_raw = fetch_json(SOURCES["TPEx"])
+    twse_etf_history_raw = fetch_twse_etf_history(datetime.now(TZ).year)
     items: list[dict[str, Any]] = []
 
     for source_rows, normalizer in ((twse_raw, normalize_twse), (tpex_raw, normalize_tpex)):
@@ -245,6 +304,14 @@ def main() -> int:
                     items.append(item)
             except (ValueError, TypeError) as exc:
                 logging.warning("略過無法解析的資料：%s；%s", row, exc)
+
+    for row in twse_etf_history_raw:
+        try:
+            item = normalize_twse_etf_history(row)
+            if item["symbol"] and item["exDividendDate"]:
+                items.append(item)
+        except (ValueError, TypeError, IndexError) as exc:
+            logging.warning("略過無法解析的 TWSE ETF 歷史資料：%s；%s", row[:6], exc)
 
     unique = {(item["source"], item["symbol"], item["exDividendDate"], item["eventType"]): item for item in items}
     feed_items = sorted(unique.values(), key=lambda x: (x["exDividendDate"], x["symbol"]))
@@ -269,6 +336,7 @@ def main() -> int:
             "TWSE": sum(i["source"] == "TWSE" for i in items),
             "TPEx": sum(i["source"] == "TPEx" for i in items),
             "latestFeed": len(feed_items),
+            "twseEtfHistorySourceRows": len(twse_etf_history_raw),
         },
         "items": items,
     }
