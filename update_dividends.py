@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import logging
 import re
+import sqlite3
 import sys
 import urllib.error
 import urllib.request
@@ -15,6 +16,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "data" / "dividends.json"
+DATABASE_FILE = ROOT / "data" / "dividends.db"
 HISTORY_DIR = ROOT / "data" / "history"
 LOG_FILE = ROOT / "logs" / "update.log"
 TZ = timezone(timedelta(hours=8), name="Asia/Taipei")
@@ -124,6 +126,108 @@ def normalize_tpex(row: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def open_database() -> sqlite3.Connection:
+    connection = sqlite3.connect(DATABASE_FILE)
+    connection.row_factory = sqlite3.Row
+    connection.executescript(
+        """
+        CREATE TABLE IF NOT EXISTS dividend_events (
+            source TEXT NOT NULL,
+            symbol TEXT NOT NULL,
+            ex_dividend_date TEXT NOT NULL,
+            event_type TEXT NOT NULL,
+            name TEXT NOT NULL,
+            market TEXT NOT NULL,
+            security_type TEXT NOT NULL,
+            cash_dividend REAL,
+            stock_dividend_ratio REAL,
+            status TEXT NOT NULL,
+            first_seen_at TEXT NOT NULL,
+            last_seen_at TEXT NOT NULL,
+            is_in_latest_feed INTEGER NOT NULL DEFAULT 1,
+            PRIMARY KEY (source, symbol, ex_dividend_date, event_type)
+        );
+        CREATE INDEX IF NOT EXISTS idx_dividend_events_date
+            ON dividend_events (ex_dividend_date);
+        CREATE INDEX IF NOT EXISTS idx_dividend_events_symbol
+            ON dividend_events (symbol);
+        CREATE INDEX IF NOT EXISTS idx_dividend_events_type
+            ON dividend_events (security_type);
+        CREATE TABLE IF NOT EXISTS update_runs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            updated_at TEXT NOT NULL,
+            twse_count INTEGER NOT NULL,
+            tpex_count INTEGER NOT NULL,
+            feed_total INTEGER NOT NULL,
+            database_total INTEGER NOT NULL
+        );
+        """
+    )
+    return connection
+
+
+def store_items(connection: sqlite3.Connection, items: list[dict[str, Any]], seen_at: str) -> None:
+    connection.execute("UPDATE dividend_events SET is_in_latest_feed = 0")
+    sql = """
+        INSERT INTO dividend_events (
+            source, symbol, ex_dividend_date, event_type, name, market,
+            security_type, cash_dividend, stock_dividend_ratio, status,
+            first_seen_at, last_seen_at, is_in_latest_feed
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)
+        ON CONFLICT(source, symbol, ex_dividend_date, event_type) DO UPDATE SET
+            name = excluded.name,
+            market = excluded.market,
+            security_type = excluded.security_type,
+            cash_dividend = COALESCE(excluded.cash_dividend, dividend_events.cash_dividend),
+            stock_dividend_ratio = COALESCE(excluded.stock_dividend_ratio, dividend_events.stock_dividend_ratio),
+            status = CASE
+                WHEN excluded.status = 'announced' OR dividend_events.status = 'announced' THEN 'announced'
+                ELSE 'pending'
+            END,
+            last_seen_at = excluded.last_seen_at,
+            is_in_latest_feed = 1
+    """
+    for item in items:
+        connection.execute(
+            sql,
+            (
+                item["source"], item["symbol"], item["exDividendDate"], item["eventType"],
+                item["name"], item["market"], item["type"], item["cashDividend"],
+                item["stockDividendRatio"], item["status"], seen_at, seen_at,
+            ),
+        )
+
+
+def export_database_items(connection: sqlite3.Connection) -> list[dict[str, Any]]:
+    rows = connection.execute(
+        """
+        SELECT source, symbol, name, market, security_type, ex_dividend_date,
+               cash_dividend, stock_dividend_ratio, event_type, status,
+               first_seen_at, last_seen_at, is_in_latest_feed
+        FROM dividend_events
+        ORDER BY ex_dividend_date, symbol
+        """
+    ).fetchall()
+    return [
+        {
+            "symbol": row["symbol"],
+            "name": row["name"],
+            "market": row["market"],
+            "type": row["security_type"],
+            "exDividendDate": row["ex_dividend_date"],
+            "cashDividend": row["cash_dividend"],
+            "stockDividendRatio": row["stock_dividend_ratio"],
+            "eventType": row["event_type"],
+            "status": row["status"],
+            "source": row["source"],
+            "firstSeenAt": row["first_seen_at"],
+            "lastSeenAt": row["last_seen_at"],
+            "isInLatestFeed": bool(row["is_in_latest_feed"]),
+        }
+        for row in rows
+    ]
+
+
 def main() -> int:
     setup_logging()
     DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -143,12 +247,29 @@ def main() -> int:
                 logging.warning("略過無法解析的資料：%s；%s", row, exc)
 
     unique = {(item["source"], item["symbol"], item["exDividendDate"], item["eventType"]): item for item in items}
-    items = sorted(unique.values(), key=lambda x: (x["exDividendDate"], x["symbol"]))
+    feed_items = sorted(unique.values(), key=lambda x: (x["exDividendDate"], x["symbol"]))
     now = datetime.now(TZ).replace(microsecond=0)
+    seen_at = now.isoformat()
+    with open_database() as database:
+        store_items(database, feed_items, seen_at)
+        items = export_database_items(database)
+        feed_twse = sum(i["source"] == "TWSE" for i in feed_items)
+        feed_tpex = sum(i["source"] == "TPEx" for i in feed_items)
+        database.execute(
+            """INSERT INTO update_runs
+               (updated_at, twse_count, tpex_count, feed_total, database_total)
+               VALUES (?, ?, ?, ?, ?)""",
+            (seen_at, feed_twse, feed_tpex, len(feed_items), len(items)),
+        )
     output = {
-        "updatedAt": now.isoformat(),
+        "updatedAt": seen_at,
         "sources": [{"name": name, "url": url} for name, url in SOURCES.items()],
-        "counts": {"total": len(items), "TWSE": sum(i["source"] == "TWSE" for i in items), "TPEx": sum(i["source"] == "TPEx" for i in items)},
+        "counts": {
+            "total": len(items),
+            "TWSE": sum(i["source"] == "TWSE" for i in items),
+            "TPEx": sum(i["source"] == "TPEx" for i in items),
+            "latestFeed": len(feed_items),
+        },
         "items": items,
     }
     temporary = DATA_FILE.with_suffix(".json.tmp")
@@ -157,7 +278,10 @@ def main() -> int:
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
     snapshot = HISTORY_DIR / f"{now.date().isoformat()}.json"
     snapshot.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    logging.info("更新完成：TWSE %s 筆、TPEx %s 筆，共 %s 筆", output["counts"]["TWSE"], output["counts"]["TPEx"], len(items))
+    logging.info(
+        "更新完成：本次官方來源 %s 筆，累積資料庫 %s 筆",
+        len(feed_items), len(items),
+    )
     return 0
 
 

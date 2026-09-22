@@ -22,13 +22,22 @@ python -m http.server 8765
 - TWSE：`https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL`（上市股票除權除息預告表）
 - TPEx：`https://www.tpex.org.tw/openapi/v1/tpex_exright_prepost`（上櫃股票除權除息預告表）
 
-兩個 API 的日期均為民國年月日。更新器會轉成 ISO `YYYY-MM-DD`，並把不同欄位統一成 `data/dividends.json`。官方資料屬滾動式預告資料，不是完整歷史資料庫。
+兩個 API 的日期均為民國年月日。更新器會轉成 ISO `YYYY-MM-DD`，並把不同欄位寫入累積式 SQLite 資料庫 `data/dividends.db`，再輸出網站使用的 `data/dividends.json`。官方來源雖是滾動式預告表，已離開官方預告表的舊紀錄仍會保留。
 
 ## JSON 結構
 
 根層包含更新時間、來源、筆數與 `items`。每筆資料包含：`symbol`、`name`、`market`、`type`、`exDividendDate`、`cashDividend`、`stockDividendRatio`、`eventType`、`status`、`source`。
 
-若官方已公告除息日但現金金額仍空白，`cashDividend` 為 `null`、`status` 為 `pending`。商品依台灣證券代碼規則分成 ETF、REIT、ETN 與個股。每次更新也會在 `data/history/YYYY-MM-DD.json` 留下當日快照。
+若官方已公告除息日但現金金額仍空白，`cashDividend` 為 `null`、`status` 為 `pending`。商品依台灣證券代碼規則分成 ETF、REIT、ETN 與個股。每筆另有 `firstSeenAt`、`lastSeenAt`、`isInLatestFeed`，可判斷首次收錄時間及是否仍在最新官方預告表中。每次更新也會在 `data/history/YYYY-MM-DD.json` 留下當日快照。
+
+## 累積資料庫
+
+`data/dividends.db` 使用 Python 內建 SQLite，不需安裝額外套件，包含：
+
+- `dividend_events`：所有曾抓到的除權息紀錄；以來源、代號、日期、事件類型為唯一鍵，後續公告金額會更新原紀錄，不會刪除舊紀錄。
+- `update_runs`：每次更新時間、TWSE／TPEx 本次筆數及資料庫累積筆數。
+
+因此後續可以直接用 SQL 進行年度、月份、商品類型、公司或配息金額統計。
 
 ## GitHub Pages
 

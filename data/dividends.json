@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T22:20:32+08:00",
+  "updatedAt": "2026-09-22T22:49:31+08:00",
   "sources": [
     {
       "name": "TWSE",
@@ -13,7 +13,8 @@
   "counts": {
     "total": 110,
     "TWSE": 35,
-    "TPEx": 75
+    "TPEx": 75,
+    "latestFeed": 110
   },
   "items": [
     {
@@ -26,7 +27,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "6204",
@@ -38,7 +42,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "8423",
@@ -50,7 +57,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00942B",
@@ -62,7 +72,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00970B",
@@ -74,7 +87,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00980B",
@@ -86,7 +102,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00988B",
@@ -98,7 +117,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00989B",
@@ -110,7 +132,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "3675",
@@ -122,7 +147,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "5426",
@@ -134,7 +162,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00687B",
@@ -146,7 +177,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00740B",
@@ -158,7 +192,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00741B",
@@ -170,7 +207,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00764B",
@@ -182,7 +222,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00772B",
@@ -194,7 +237,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00773B",
@@ -206,7 +252,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00777B",
@@ -218,7 +267,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00778B",
@@ -230,7 +282,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00779B",
@@ -242,7 +297,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00781B",
@@ -254,7 +312,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00792B",
@@ -266,7 +327,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00840B",
@@ -278,7 +342,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00859B",
@@ -290,7 +357,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00862B",
@@ -302,7 +372,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00863B",
@@ -314,7 +387,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00890B",
@@ -326,7 +402,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00933B",
@@ -338,7 +417,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00937B",
@@ -350,7 +432,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00948B",
@@ -362,7 +447,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00957B",
@@ -374,7 +462,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00980D",
@@ -386,7 +477,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00981D",
@@ -398,7 +492,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00982B",
@@ -410,7 +507,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "1599",
@@ -422,7 +522,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00710B",
@@ -434,7 +537,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00711B",
@@ -446,7 +552,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00712",
@@ -458,7 +567,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00853B",
@@ -470,7 +582,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00929",
@@ -482,7 +597,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00985D",
@@ -494,7 +612,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00986D",
@@ -506,7 +627,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00998A",
@@ -518,7 +642,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "4420",
@@ -530,7 +657,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "4533",
@@ -542,7 +672,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "5306",
@@ -554,7 +687,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "5498",
@@ -566,7 +702,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00728",
@@ -578,7 +717,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00918",
@@ -590,7 +732,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00994A",
@@ -602,7 +747,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00697B",
@@ -614,7 +762,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00713",
@@ -626,7 +777,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00751B",
@@ -638,7 +792,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00787B",
@@ -650,7 +807,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00967B",
@@ -662,7 +822,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00968B",
@@ -674,7 +837,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00981B",
@@ -686,7 +852,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "3260",
@@ -698,7 +867,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-rights-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "5314",
@@ -710,7 +882,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "8042",
@@ -722,7 +897,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-rights",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00836B",
@@ -734,7 +912,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00856B",
@@ -746,7 +927,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00857B",
@@ -758,7 +942,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00930",
@@ -770,7 +957,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00958B",
@@ -782,7 +972,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00990B",
@@ -794,7 +987,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "1442",
@@ -806,7 +1002,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "1595",
@@ -818,7 +1017,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "1808",
@@ -830,7 +1032,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "2542",
@@ -842,7 +1047,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "4109",
@@ -854,7 +1062,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "5258",
@@ -866,7 +1077,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "1235",
@@ -878,7 +1092,10 @@
       "stockDividendRatio": 0.04999999,
       "eventType": "ex-rights-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "2109",
@@ -890,7 +1107,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "7631",
@@ -902,7 +1122,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "01004T",
@@ -914,7 +1137,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "8440",
@@ -926,7 +1152,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "1784",
@@ -938,7 +1167,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "2323",
@@ -950,7 +1182,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "6523",
@@ -962,7 +1197,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "9927",
@@ -974,7 +1212,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "6171",
@@ -986,7 +1227,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "6834",
@@ -998,7 +1242,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-rights",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00406A",
@@ -1010,7 +1257,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00939",
@@ -1022,7 +1272,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00950B",
@@ -1034,7 +1287,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00959B",
@@ -1046,7 +1302,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00966B",
@@ -1058,7 +1317,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00983B",
@@ -1070,7 +1332,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00984B",
@@ -1082,7 +1347,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00984D",
@@ -1094,7 +1362,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00986B",
@@ -1106,7 +1377,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "020035",
@@ -1118,7 +1392,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "5512",
@@ -1130,7 +1407,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "2614",
@@ -1142,7 +1422,10 @@
       "stockDividendRatio": 0.08,
       "eventType": "ex-rights-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "8021",
@@ -1154,7 +1437,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-rights",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00940",
@@ -1166,7 +1452,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00946",
@@ -1178,7 +1467,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00953B",
@@ -1190,7 +1482,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00985B",
@@ -1202,7 +1497,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "2890",
@@ -1214,7 +1512,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-rights",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "2947",
@@ -1226,7 +1527,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "6108",
@@ -1238,7 +1542,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "6129",
@@ -1250,7 +1557,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-rights",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "6947",
@@ -1262,7 +1572,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "00400A",
@@ -1274,7 +1587,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "pending",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "1565",
@@ -1286,7 +1602,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "8102",
@@ -1298,7 +1617,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "8936",
@@ -1310,7 +1632,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "4552",
@@ -1322,7 +1647,10 @@
       "stockDividendRatio": null,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TWSE"
+      "source": "TWSE",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     },
     {
       "symbol": "5523",
@@ -1334,7 +1662,10 @@
       "stockDividendRatio": 0.0,
       "eventType": "ex-dividend",
       "status": "announced",
-      "source": "TPEx"
+      "source": "TPEx",
+      "firstSeenAt": "2026-09-22T22:49:31+08:00",
+      "lastSeenAt": "2026-09-22T22:49:31+08:00",
+      "isInLatestFeed": true
     }
   ]
 }
